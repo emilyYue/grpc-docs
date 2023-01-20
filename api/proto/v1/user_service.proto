@@ -1,0 +1,29 @@
+syntax = "proto3";
+package v1;
+
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+    rpc createUser(User) returns (User);
+    rpc getUser(UserId) returns (User);
+    rpc updateUser(User) returns (User);
+    rpc deleteUser(UserId) returns (Empty);
+}
+
+message Empty {};
+
+message User {
+    uint64 id = 1;
+    required string email = 2;
+    string firstName = 3;
+    string lastName = 4;
+    required string orgId = 5;
+    bool isStaff = 6;
+    bool isOrgAdmin = 7;
+    string passwordHash = 8;
+    google.protobuf.Timestamp createdAt = 9;
+}
+
+message UserId {
+    uint64 id = 1;
+}
