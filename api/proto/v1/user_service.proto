@@ -1,13 +1,12 @@
 syntax = "proto3";
 package v1;
 
-// test
 import "google/protobuf/timestamp.proto";
 
 service UserService {
     rpc createUser(User) returns (User);
     rpc getUser(UserId) returns (User);
-    rpc updateUser(User) returns (stream User);
+    rpc updateUser(User) returns (User);
     rpc deleteUser(UserId) returns (Empty);
 }
 
