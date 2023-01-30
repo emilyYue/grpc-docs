@@ -14,10 +14,10 @@ message Empty {};
 
 message User {
     uint64 id = 1;
-    required string email = 2;
+    string email = 2;
     string firstName = 3;
     string lastName = 4;
-    required string orgId = 5;
+    string orgId = 5;
     bool isStaff = 6;
     bool isOrgAdmin = 7;
     string passwordHash = 8;
